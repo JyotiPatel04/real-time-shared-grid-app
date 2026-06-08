@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  font-family: Arial, sans-serif;
+  color: #f8fafc;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 32px;
+}
+
+.hero {
+  max-width: 1250px;
+  margin: 0 auto 28px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tag {
+  display: inline-block;
+  background: rgba(56, 189, 248, 0.15);
+  color: #7dd3fc;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.hero p {
+  color: #cbd5e1;
+}
+
+.top-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.status,
+.profile {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 11px 16px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.status span,
+.profile span,
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.status.online span {
+  background: #22c55e;
+}
+
+.status.offline span {
+  background: #ef4444;
+}
+
+.join-card,
+.grid-card,
+.leaderboard {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 24px;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.join-card {
+  width: 420px;
+  margin: 90px auto;
+  padding: 32px;
+  text-align: center;
+}
+
+.join-card h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.join-card p {
+  color: #cbd5e1;
+  margin-bottom: 20px;
+}
+
+.join-card input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 14px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  outline: none;
+}
+
+.join-card button,
+.reset-btn {
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.join-card button {
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  background: #38bdf8;
+  color: #082f49;
+  font-size: 16px;
+}
+
+.main-layout {
+  max-width: 1250px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 24px;
+}
+
+.grid-card,
+.leaderboard {
+  padding: 24px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.stats div {
+  background: rgba(255,255,255,0.12);
+  padding: 14px;
+  border-radius: 16px;
+}
+
+.stats span {
+  display: block;
+  color: #cbd5e1;
+  font-size: 13px;
+}
+
+.stats strong {
+  font-size: 24px;
+}
+
+.reset-btn {
+  padding: 0 18px;
+  border-radius: 16px;
+  background: #f97316;
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(20, 1fr);
+  gap: 5px;
+}
+
+.cell {
+  aspect-ratio: 1;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 7px;
+  background: rgba(255,255,255,0.18);
+  color: #0f172a;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cell:hover {
+  transform: scale(1.15);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+}
+
+.cell.claimed {
+  cursor: not-allowed;
+  animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.7);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.leaderboard h2 {
+  font-size: 26px;
+}
+
+.side-text {
+  color: #cbd5e1;
+  margin: 6px 0 18px;
+}
+
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.rank {
+  color: #93c5fd;
+  font-weight: bold;
+}
+
+.player-name {
+  flex: 1;
+}
+
+.empty,
+.info-box,
+.message {
+  background: rgba(255,255,255,0.12);
+  padding: 14px;
+  border-radius: 14px;
+  color: #e2e8f0;
+}
+
+.info-box {
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.message {
+  margin-bottom: 15px;
+  color: #fecaca;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .top-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .main-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .join-card {
+    width: 100%;
+    margin: 60px auto;
+  }
+}
