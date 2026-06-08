@@ -190,7 +190,7 @@ Future improvements can include persistent storage using MongoDB or PostgreSQL.
 **Jyoti Patel**
 
 * GitHub: https://github.com/JyotiPatel04
-* LinkedIn: https://www.linkedin.com/in/jyoti-patel-842aa1285/
+* LinkedIn: https://www.linkedin.com/in/jyoti-patel-489b4733b
 
 ---
 
